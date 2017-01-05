@@ -1,0 +1,209 @@
+body, html {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	color: #dfdfdf;
+	margin-bottom: 120px;
+
+}
+a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+body {
+  background: url(../img/1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: background-image 4s ease-in-out;
+  transition: background-image 4s ease-in-out;
+}
+
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	color: #cfcfcf;
+	text-align: left;
+	margin-bottom: 0;
+	margin-left: 360px;
+}
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	color: #cfcfcf;
+	font-size: 1.2em;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	padding: 0;
+	margin-left: 360px;
+}
+.back {
+	position: fixed;
+	left:0;
+	margin:0;
+	padding: 0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.wrap {
+	width: 1000px;
+	margin: 0 auto;
+	top: 100px;
+	text-align: center;
+	
+	position: relative;
+	vertical-align: center;
+	
+	padding-top: 2em;
+	padding-bottom: 80px;
+
+
+}
+header {
+	position: relative;
+	width: 100%;
+}
+nav {
+	position: absolute;
+	left: 0px;
+	width: 340px;
+	
+	padding-right: 20px;
+}
+
+/*footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+  background-color: #ccc;
+}*/
+
+
+.menu {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+	margin-top: 0.8em;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #bbb;
+	cursor: pointer;
+	
+}
+
+.menu li {
+	transition: 0.4s;
+}
+.menu li:hover {
+	color: #fff;
+}
+
+.menu li ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+	font-size: 1rem;
+	font-weight: normal;
+	color: #bbb;
+}
+.menu li ul li {
+
+}
+.menu li ul li:hover {
+	color: #fff;
+}
+
+/*h3{
+	text-align: right;
+	margin-top: 0.8em;
+	margin-bottom: 0.05em;
+	color: #bbb;
+}*/
+
+
+ .accordion {
+    
+    
+}
+.menu li:active {
+	color:#fff;
+}
+.menu li:active, a.accordion:hover {
+    color:#fff;
+}
+
+.accordion.active, a.accordion:hover {
+    color:#fff;
+}
+div .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div .panel.show {
+    opacity: 1;
+    max-height: 500px;  
+}
+
+
+/*==============SECTIONS*/
+img {
+	float: left;
+	margin-right: 10px;
+}
+section {
+	/* position is static by default */
+	padding-top: 0.5em;
+	margin-left: 360px;
+	margin-right: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+	transition: 0.6s ease-in-out;
+	transition-delay: 0.0s;
+	max-height: 0; 
+    opacity: 0;
+    display: none;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+	overflow-y: scroll;
+}
+section::-webkit-scrollbar { width: 0; }
+section { overflow: -moz-scrollbars-none; }
+
+section.show {
+	/* position is static by default */
+	max-height: 500px; 
+	transition: 0.6s ease-in-out;
+	transition-delay: 0.6s;
+    opacity: 1;
+    display: block;
+}
+
+h3 {
+	margin-top: 0;
+	margin-bottom: 0.1em; 
+	padding-top: 0;
+	padding-bottom: 0;
+	color: #efefef;
+}
+
+p {
+	margin-top: ;
+}
+
+.link.active {
+	color:#fff;
+}
