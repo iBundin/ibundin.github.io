@@ -1,4 +1,4 @@
-body, html {
+	body, html {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
 	color: #dfdfdf;
@@ -10,10 +10,12 @@ a {
 	text-decoration: none;
 	font-weight: bold;
 }
-
+a:hover {
+	color: #ccc;
+}
 
 body {
-  background: url(../img/1.jpg) no-repeat center center fixed;
+  /*background: url(../img/1.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,19 +27,21 @@ body {
 h1 {
 	font-family: 'Open Sans', sans-serif;
 	color: #cfcfcf;
-	text-align: left;
+	text-align: center;
 	margin-bottom: 0;
-	margin-left: 360px;
+	/*margin-left: 200px;*/
+	text-shadow: rgb(71, 71, 71) 1px 1px 1px;
 }
 h2 {
 	font-family: 'Open Sans', sans-serif;
 	color: #cfcfcf;
 	font-size: 1.2em;
-	text-align: left;
+	text-align: center;
 	margin-top: 0;
 	margin-bottom: 0.5em;
 	padding: 0;
-	margin-left: 360px;
+	/*margin-left: 200px;*/
+	text-shadow: rgb(71, 71, 71) 1px 1px 1px;
 }
 .back {
 	position: fixed;
@@ -47,33 +51,40 @@ h2 {
 	top:0;
 	width:100%;
 	height:100%;
-	background-color: rgba(0,0,0,0.7);
+	background-color: #000;
+	opacity: 1;
+	transition: all 5s ease-in;;
 }
 
 .wrap {
-	width: 1000px;
+	width: 900px;
 	margin: 0 auto;
-	top: 100px;
+	top: 4em;
 	text-align: center;
 	
 	position: relative;
 	vertical-align: center;
 	
-	padding-top: 2em;
-	padding-bottom: 80px;
-
-
+	margin-top: 1em;
+	padding-bottom: 10px;
+}
+.container {
+	width: 900px;
+	left: 0;
+	margin-top: 0;
+	position: relative;
+	margin-left: -140px;
 }
 header {
 	position: relative;
 	width: 100%;
 }
-nav {
+.navMenu {
 	position: absolute;
-	left: 0px;
-	width: 340px;
-	
-	padding-right: 20px;
+	left: 280px;
+	width: 620px;
+	top: 100px;
+	padding-right: 40px;
 }
 
 /*footer {
@@ -85,21 +96,28 @@ nav {
   width: 100%;
   background-color: #ccc;
 }*/
-
+.navMenu.centered {
+	position: relative;
+	width: 620px;
+	left: 280px;
+	top: 100px; 
+}
 
 .menu {
 	list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: right;
+    text-align: center;
 	margin-top: 0.8em;
 	font-size: 1.2em;
 	font-weight: bold;
 	color: #bbb;
 	cursor: pointer;
-	
+	text-shadow: rgb(71, 71, 71) 1px 1px 1px;
 }
-
+.menu.centered {
+	text-align: center;
+}
 .menu li {
 	transition: 0.4s;
 }
@@ -111,7 +129,7 @@ nav {
 	list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: right;
+    
 	font-size: 1rem;
 	font-weight: normal;
 	color: #bbb;
@@ -160,17 +178,16 @@ div .panel.show {
 
 /*==============SECTIONS*/
 img {
-	float: left;
-	margin-right: 10px;
+	float: top;
 }
 section {
 	/* position is static by default */
 	padding-top: 0.5em;
-	margin-left: 360px;
-	margin-right: 20px;
+	margin-left: 280px;
+	margin-right: 0;
 	margin-top: 0;
 	margin-bottom: 0;
-	text-align: left;
+	text-align: justify;
 	transition: 0.6s ease-in-out;
 	transition-delay: 0.0s;
 	max-height: 0; 
@@ -179,13 +196,14 @@ section {
     /*overflow-y: scroll;*/
     overflow-x: hidden;
 	overflow-y: scroll;
+
 }
 section::-webkit-scrollbar { width: 0; }
 section { overflow: -moz-scrollbars-none; }
 
 section.show {
 	/* position is static by default */
-	max-height: 500px; 
+	max-height: 100%; 
 	transition: 0.6s ease-in-out;
 	transition-delay: 0.6s;
     opacity: 1;
@@ -206,4 +224,152 @@ p {
 
 .link.active {
 	color:#fff;
+}
+
+
+
+
+/*========BUTTONS*/
+/*close*/
+.btn {
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 2px 7px 2px 7px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.btn:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.closer {
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	text-align: center;
+	bottom: 4em;
+	display: none;
+}
+/*Threee Lines menu button */
+.linesMenu { display: none;}
+
+@media (max-width: 1000px) {
+	.c-hamburger {
+	  display: block;
+	  position: relative;
+	  overflow: hidden;
+	  margin: 0;
+	  padding: 0;
+	  width: 96px;
+	  height: 96px;
+	  font-size: 0;
+	  text-indent: -9999px;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: none;
+	  border: none;
+	  cursor: pointer;
+	  transition: background 0.3s;
+	}
+
+	.c-hamburger:focus {
+	  outline: none;
+	}
+
+	.c-hamburger span {
+	  display: block;
+	  position: absolute;
+	  top: 44px;
+	  left: 18px;
+	  right: 18px;
+	  height: 8px;
+	  background: white;
+	}
+
+	.c-hamburger span::before,
+	.c-hamburger span::after {
+	  position: absolute;
+	  display: block;
+	  left: 0;
+	  width: 100%;
+	  height: 8px;
+	  background-color: #fff;
+	  content: "";
+	}
+
+	.c-hamburger span::before {
+	  top: -20px;
+	}
+
+	.c-hamburger span::after {
+	  bottom: -20px;
+	}
+	.c-hamburger--rot {
+	  background: none;
+	}
+
+	.c-hamburger--rot span {
+	  transition: transform 0.3s;
+	}
+
+	/* active state, i.e. menu open */
+	.c-hamburger--rot.is-active {
+	  
+	}
+
+	.c-hamburger--rot.is-active span {
+	  transform: rotate(90deg);
+	}
+
+	.linesMenu {
+		position: absolute;
+		top: 5em;
+		left:50%;
+		margin-left: -328px;
+		z-index: 5;
+		display: block;
+	}
+
+
+	.wrap {
+		width: 620px;
+		margin: 0 auto;
+		top: 4em;
+		text-align: center;
+		
+		position: relative;
+		vertical-align: center;
+		
+		margin-top: 1em;
+		padding-bottom: 10px;
+	}
+	.container {
+		width: 620px;
+		left: 0;
+		margin-top: 0;
+		position: relative;
+		margin-left: 0;
+	}
+	section {
+	/* position is static by default */
+		margin-left: 0;
+	}
+	nav {
+		position: relative;
+		width: 100%;
+		top:100px;
+		display: none;
+		background-color: #ff0000;
+	}
+	.menu {
+	    text-align: center;
+	}
 }
