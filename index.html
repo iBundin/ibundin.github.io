@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://use.fontawesome.com/f10714daf0.js"></script>
+	<script src="js/myPlayer.js"></script>
 </head>
 <body>
 	<div class="linesMenu">
@@ -12,14 +13,14 @@
 	  		<span>toggle menu</span>
 		</button>
 	</div>
-	<div class="closer"><a id="clBut" class="btn">close</a></div>
+	<!-- <div class="closer"><a id="clBut" class="btn">close</a></div> -->
 	
 	<div class="back">&nbsp</div>
 	<div class="wrap">
 	
-		<header>
-			<h1>Andrey Bundin</h1>
-			<h2>Composer / Media Artist</h2>
+		<header class="closer">
+			<h1>ANDREY BUNDIN</h1>
+			<h2>composer | media artist</h2>
 		</header>
 
 		<div class="container">
@@ -92,8 +93,8 @@
 		<p>Music for virtual objects, octaphonic sound system, and contactless interface (Leap Motion). There are no samples or live instruments in this work, every sound is generated using physical modelling synthesis.</p>
 		<p>St. Petersburg, 2016</p>
 		</section>
-		<section><p><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnewstagemedialab%2Fvideos%2F1914628132102432%2F&show_text=0&width=620" width="620" height="320" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe></p>
-		<p>Conundrum for table and electronics, a computer game for one percussionist on stage. This interactive peice is dedicated to Mark Pekarskiy, who is the first musician performed it. The premier took place at the Moscow Composser's Union hall during the Moscow Autumn music festival in November 2016.</p>
+		<section><p><iframe width="620" height="320" src="https://www.youtube.com/embed/aVgc1wgA7Bw" frameborder="0" allowfullscreen></iframe></p>
+		<p>Conundrum for table and electronics, a computer game for one percussionist on stage. This interactive piece is dedicated to Mark Pekarsky, who is the first musician performed it. The premier took place at the Moscow Composer's Union hall during the Moscow Autumn music festival in November 2016.</p>
 		<p>Moscow, 2016</p>
 		</section>
 		<section>
@@ -125,10 +126,25 @@
 		</section>
 		<section>
 			<p>
-				<audio controls style="width: 100%">
-					<source src="https://www.dropbox.com/s/9uaazxvmwabon5s/Toccata%20for%20violin%20and%20piano.mp3?dl=1"  type="audio/mp3"  preload="false">
-					<source src="https://www.dropbox.com/s/yixd35li2u5ho2a/Organ%20fantasy.mp3?dl=1" type="audio/mp3"  preload="false">
-				</audio>
+				
+				<!-- <source src="https://www.dropbox.com/s/yixd35li2u5ho2a/Organ%20fantasy.mp3?dl=1" type="audio/mp3"  preload="false"> -->
+				<div class="m-player" id="m-player1">
+				</div>
+				<!-- <script>
+					var playlists = document.getElementsByClassName("playlist");
+					var audioElement = document.getElementsByClassName("m-audio").getElementsByTagName("audio")[0];
+					for (var i = playlists.length - 1; i >= 0; i--) {
+						var lis = playlists[i].getElementsByTagName("li");
+						for (var j = lis.length - 1; j >= 0; j--) {
+							lis[i].onclick = function() {
+
+							}
+						}
+					}
+				</script> -->
+				<p>
+					
+				</p>
 			</p>
 		</section>
 		<section>
@@ -192,14 +208,14 @@
 				}, timer);
 			}
 			changeBG(0, function() {
-				bgMask.style.opacity = 0.7;
+				bgMask.style.opacity = 0.73;
 				console.log('callback');
 			});
 		}
 
 		function fadeOutBack() {
-	    	if (bgMask.style.opacity > 0) bgMask.style.opacity = 0.7;
-	    	document.getElementsByClassName("closer")[0].style.display = "block";
+	    	if (bgMask.style.opacity > 0) bgMask.style.opacity = 0.73;
+	    	/*document.getElementsByClassName("closer")[0].style.display = "block";*/
 	    	mainMenuList.style = "text-align:right";
 	    	mainMenu.style.width = "240px";
 	    	mainMenu.style.left = "0";
@@ -213,7 +229,7 @@
 			lin[i].addEventListener("click",fadeOutBack,false);
 		}
 
-		document.getElementById("clBut").onclick = function() {
+		document.getElementsByClassName("closer")[0].onclick = function() {
 			document.getElementsByClassName("back")[0].style.opacity = 0.2;
 			for (var i = 0; i < sec.length; i++) {
 	        	sec[i].classList.remove("show");
@@ -221,7 +237,7 @@
 		    for (var i = 0; i < panels.length; i++) {
 	        	panels[i].classList.remove("show");
 	        }
-	        document.getElementsByClassName("closer")[0].style.display = "none";
+	        /*document.getElementsByClassName("closer")[0].style.display = "none";*/
 		    mainMenu.style.position = "relative";
 		    mainMenu.style.width = "620px";
 		    mainMenu.style.left = "280px";
@@ -270,6 +286,27 @@
 		    });
 		  }
 		})();
+	</script>
+	<script>
+		console.log("trying0");
+		var songs = [
+			{
+				"title": "Toccata for Violin and Piano",
+				"artist": "Violin: E. Sviridov, Piano: D. Maminova",
+				"place": "St. Petersburg, 2010",
+				"description": "Piece for organ solo written in...",
+				"url": "https://www.dropbox.com/s/9uaazxvmwabon5s/Toccata%20for%20violin%20and%20piano.mp3?dl=1"
+			},
+			{
+				"title": "Fantasy for Organ",
+				"artist": "Electronic Organ: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "Piece for Violin and Piano",
+				"url": "https://www.dropbox.com/s/yixd35li2u5ho2a/Organ%20fantasy.mp3?dl=1"
+			}
+		]
+		myPlayer(songs);
+		console.log("trying1");
 	</script>
 </body>
 </html>
