@@ -5,9 +5,9 @@ function myPlayer(songList) {
 	pList.classList.add("playlist");
 	var descrZone = document.createElement('p');
 
-	for (var i = songList.length - 1; i >= 0; i--) {
+	for (var i=0;i<songList.length;i++) {
 		var song = document.createElement("li");
-		song.innerHTML = '<strong>' + songList[i].title+'</strong> ' + songList[i].artist + '<br/>' + songList[i].place;
+		song.innerHTML = '<strong>' + songList[i].title+'</strong> ' + songList[i].artist + ' ' + songList[i].place;
 		song.setAttribute('url',songList[i].url);
 		song.setAttribute('description',songList[i].description);
 		song.onclick = function() {
@@ -15,6 +15,7 @@ function myPlayer(songList) {
 			descrZone.innerHTML = this.getAttribute('description');
 			player.load(); //call this to just preload the audio without playing
         	player.play(); //call this to play the song right away
+        	this.classList.add('active');
 		}
 		pList.appendChild(song);
 	}
@@ -22,5 +23,17 @@ function myPlayer(songList) {
 	mPlayerInst.appendChild(player);
 	mPlayerInst.appendChild(pList);
 	mPlayerInst.appendChild(descrZone);
-	console.log(songList);
+
+	player.onended = function() {
+		var thisSong = pList.getElementsByClassName('active')[0];
+		thisSong.classList.remove('active');
+		var nextSong = thisSong.nextElementSibling;
+		if (nextSong) {
+			player.src = nextSong.getAttribute('url');
+			player.load();
+	    	player.play();
+	    	nextSong.classList.add('active');
+		}
+	}
 }
+

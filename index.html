@@ -174,8 +174,10 @@
 		//Load Page
 		var hash = window.location.hash.substr(1);
 		if (hash) {
-			sec[hash].classList.add("show");
 			lin[hash].classList.add("active");
+			lin[hash].parentElement.parentElement.classList.add("show");
+			console.log(lin[hash].parentElement);
+			sec[hash].classList.add("show");
 			fadeOutBack();
 		}
 		
@@ -192,26 +194,12 @@
 		        	lin[j].classList.remove("active");
 		        }
 		        this.classList.add("active");
-		     	
+		     	window.location.hash = '#'+this.classList[1];
 		  }
 		}
-		window.onload = function() {
-			var changeBG = function(timer, callback) {
-				setTimeout(function(){
-					var downloadingImage = new Image();
-					downloadingImage.onload = function(){
-					    document.body.style = "background:url(" + downloadingImage.src +") no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;";
-					    changeBG(15000);
-					    if(callback) callback();
-					};
-					downloadingImage.src = "img/" + Math.floor(Math.random()*6).toString(10) + ".jpg";
-				}, timer);
-			}
-			changeBG(0, function() {
-				bgMask.style.opacity = 0.73;
-				console.log('callback');
-			});
-		}
+		/*window.onload = function() {*/
+			
+		/*}*/
 
 		function fadeOutBack() {
 	    	if (bgMask.style.opacity > 0) bgMask.style.opacity = 0.73;
@@ -251,8 +239,6 @@
 				lin[i].addEventListener("click",fadeOutBack,false);
 			}
 		}
-
-
 		
 	</script>
 	<script>
@@ -288,25 +274,102 @@
 		})();
 	</script>
 	<script>
-		console.log("trying0");
 		var songs = [
 			{
 				"title": "Toccata for Violin and Piano",
 				"artist": "Violin: E. Sviridov, Piano: D. Maminova",
 				"place": "St. Petersburg, 2010",
-				"description": "Piece for organ solo written in...",
+				"description": "",
 				"url": "https://www.dropbox.com/s/9uaazxvmwabon5s/Toccata%20for%20violin%20and%20piano.mp3?dl=1"
 			},
 			{
 				"title": "Fantasy for Organ",
 				"artist": "Electronic Organ: Andrey Bundin",
 				"place": "St. Petersburg, 2012",
-				"description": "Piece for Violin and Piano",
+				"description": "",
 				"url": "https://www.dropbox.com/s/yixd35li2u5ho2a/Organ%20fantasy.mp3?dl=1"
+			},
+			{
+				"title": "6 Sonnets for piano: #1 Prelude",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/c0cvfl7ula2e11y/%231.mp3?dl=1"
+			}
+			,
+			{
+				"title": "6 Sonnets for piano: #2 Recitative",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/ozm7p0oal1bwrbl/%232.mp3?dl=1"
+			}
+			,
+			{
+				"title": "6 Sonnets for piano: #3 Nocturne",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/xsb37xld3t20ffr/%233.mp3?dl=1"
+			}
+			,
+			{
+				"title": "6 Sonnets for piano: #4 Dance",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/3pkimo45bwx5xgo/%234.mp3?dl=1"
+			}
+			,
+			{
+				"title": "6 Sonnets for piano: #5 Recitative",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/9phbwn540zvohsj/%235.mp3?dl=1"
+			}
+			,
+			{
+				"title": "6 Sonnets for piano: #6 Chime",
+				"artist": "Piano: Andrey Bundin",
+				"place": "St. Petersburg, 2012",
+				"description": "",
+				"url": "https://www.dropbox.com/s/ady8mosvdfqp7jv/%236.mp3?dl=1"
 			}
 		]
 		myPlayer(songs);
-		console.log("trying1");
+
+		//Stop all sounds function
+		function stopAllSounds() {
+		  var sounds = document.getElementsByTagName('audio');
+		  for(i=0; i<sounds.length; i++) sounds[i].pause();
+		};
+	</script>
+	<script>
+		var changeBG = function(timer, callback) {
+			setTimeout(function(){
+				var downloadingImage = new Image();
+				downloadingImage.onload = function(){
+				    document.body.style = "background:url(" + downloadingImage.src +") no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;";
+				    changeBG(15000);
+				    if(callback) callback();
+				};
+				downloadingImage.src = "img/" + Math.floor(Math.random()*6).toString(10) + ".jpg";
+			}, timer);
+		}
+		changeBG(0, function() {
+			bgMask.style.opacity = 0.73;
+			console.log('callback');
+		});
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-36979435-2', 'auto');
+	  ga('send', 'pageview');
 	</script>
 </body>
 </html>

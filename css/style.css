@@ -21,6 +21,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   -webkit-transition: background-image 4s ease-in-out;
+  -moz-transition: background-image 4s ease-in-out;
   transition: background-image 4s ease-in-out;
   overflow:hidden;
 }
@@ -147,16 +148,16 @@ header {
 	list-style-type: none;
     margin: 0;
     padding: 0;
-    letter-spacing: 0px;
-	font-size: 1rem;
+    color: #ccc;
 	font-weight: normal;
-	color: #ccc;
+	letter-spacing: 0px;
 	text-transform: none;
+	font-size: 1rem;
 }
-.menu li ul li {
-
+.menu li ul li a {
+	
 }
-.menu li ul li:hover {
+.menu li ul li a:hover {
 	color: #fff;
 }
 
@@ -203,7 +204,7 @@ img {
 }
 section {
 	/* position is static by default */
-	padding-top: 0.5em;
+	padding-top: 0;
 	margin-left: 280px;
 	margin-right: 0;
 	margin-top: 0;
@@ -411,7 +412,7 @@ audio::-webkit-media-controls-panel {
 
 .playlist {
 	list-style-type: none;
-	background: rgba(255,255,255,0.6);
+	
 	margin:0;
 	margin-top: -5px;
 	padding:0;
@@ -420,10 +421,15 @@ audio::-webkit-media-controls-panel {
 	font-size: 0.9rem;
 }
 .playlist li {
-	padding:8px;
+	padding:6px;
+	background: rgba(255,255,255,0.75); 
 }
 .playlist li:hover {
-	background: rgba(255,255,255,0.8);
+	background: rgba(255,255,255,0.9);
+	color: #000;
+}
+.playlist li.active {
+	background: rgba(255,255,255,0.9);
 	color: #000;
 }
 
