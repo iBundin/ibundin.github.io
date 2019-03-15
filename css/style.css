@@ -74,10 +74,8 @@ h2 {
 	margin: 0 auto;
 	top: 1.8em;
 	text-align: center;
-	
 	position: relative;
 	vertical-align: center;
-	
 	margin-top: 1.2em;
 	padding-bottom: 10px;
 
@@ -115,7 +113,7 @@ header {
 	position: relative;
 	width: 620px;
 	left: 280px;
-	top: 100px; 
+	top: 100px;
 }
 
 .menu {
@@ -155,7 +153,7 @@ header {
 	font-size: 1rem;
 }
 .menu li ul li a {
-	
+
 }
 .menu li ul li a:hover {
 	color: #fff;
@@ -170,8 +168,8 @@ header {
 
 
  .accordion {
-    
-    
+
+
 }
 .menu li:active {
 	color:#fff;
@@ -193,7 +191,7 @@ div .panel {
 
 div .panel.show {
     opacity: 1;
-    max-height: 500px;  
+    max-height: 500px;
     margin-bottom: 14px;
 }
 
@@ -212,7 +210,7 @@ section {
 	text-align: justify;
 	transition: 0.6s ease-in-out;
 	transition-delay: 0.0s;
-	max-height: 0; 
+	max-height: 0;
     opacity: 0;
     display: none;
     /*overflow-y: scroll;*/
@@ -225,7 +223,7 @@ section { overflow: -moz-scrollbars-none; }
 
 section.show {
 	/* position is static by default */
-	max-height: 100%; 
+	max-height: 100%;
 	transition: 0.6s ease-in-out;
 	transition-delay: 0.6s;
     opacity: 1;
@@ -234,7 +232,7 @@ section.show {
 
 h3 {
 	margin-top: 0;
-	margin-bottom: 0.1em; 
+	margin-bottom: 0.1em;
 	padding-top: 0;
 	padding-bottom: 0;
 	color: #efefef;
@@ -344,7 +342,7 @@ p {
 
 	/* active state, i.e. menu open */
 	.c-hamburger--rot.is-active {
-	  
+
 	}
 
 	.c-hamburger--rot.is-active span {
@@ -366,10 +364,8 @@ p {
 		margin: 0 auto;
 		top: 4em;
 		text-align: center;
-		
 		position: relative;
 		vertical-align: center;
-		
 		margin-top: 1em;
 		padding-bottom: 10px;
 	}
@@ -412,7 +408,6 @@ audio::-webkit-media-controls-panel {
 
 .playlist {
 	list-style-type: none;
-	
 	margin:0;
 	margin-top: -5px;
 	padding:0;
@@ -422,7 +417,7 @@ audio::-webkit-media-controls-panel {
 }
 .playlist li {
 	padding:6px;
-	background: rgba(255,255,255,0.75); 
+	background: rgba(255,255,255,0.75);
 }
 .playlist li:hover {
 	background: rgba(255,255,255,0.9);
